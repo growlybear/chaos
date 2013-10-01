@@ -36,19 +36,22 @@
 
             // move to top point of triangle
             chaos.context.moveTo(
-                Math.cos(angle), Math.sin(angle)
+                Math.cos(angle),
+                Math.sin(angle)
             );
             angle += Math.PI * 2/3;
 
             // draw line to lower right point
             chaos.context.lineTo(
-                Math.cos(angle), Math.sin(angle)
+                Math.cos(angle),
+                Math.sin(angle)
             );
 
             // draw line to final point
             angle += Math.PI * 2/3;
             chaos.context.lineTo(
-                Math.cos(angle), Math.sin(angle)
+                Math.cos(angle),
+                Math.sin(angle)
             );
 
             // fill will close the shape
@@ -93,7 +96,8 @@
         chaos.clear();
         chaos.context.save();
         chaos.context.translate(
-            chaos.width * 0.5, chaos.height * 0.6
+            chaos.width * 0.5,
+            chaos.height * 0.6
         );
 
         chaos.context.scale(size, size);
