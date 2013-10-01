@@ -17,7 +17,9 @@
             switch (ev.keyCode) {
             case 32:    // space bar
                 maxDepth += 1;
-                draw();
+                if (maxDepth < 10) {
+                    draw();
+                }
                 break;
             case 80:    // p key
                 chaos.popImage();
