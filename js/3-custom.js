@@ -83,7 +83,7 @@
         chaos.context.fillStyle = 'rgba(0, 0, 0, 0.5)';
         chaos.context.beginPath();
         // chaos.context.arc(0, 0, size, 0, Math.PI * 2, false);
-        chaos.context.rect(0, 0, 200, 100);
+        chaos.context.rect(0, 0, 20, 400);
         chaos.context.fill();
     }
 
