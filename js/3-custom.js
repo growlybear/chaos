@@ -22,8 +22,12 @@
 
         chaos.init();
 
-        size = chaos.height / 8;
-        dist = size * 1.5;
+        size = chaos.height / 10;
+        dist = [
+            size * Math.random() * 3 + 1,
+            size * Math.random() * 3 + 1,
+            size * Math.random() * 3 + 1
+        ];
 
         draw();
 
@@ -62,7 +66,7 @@
         for (i = 0; i < numShapes; i++) {
             chaos.context.save();
             chaos.context.rotate(angles[i] + offset);
-            chaos.context.translate(dist, 0);
+            chaos.context.translate(dist[i], 0);
             chaos.context.scale(scaleFactor, scaleFactor);
 
             drawShape();
