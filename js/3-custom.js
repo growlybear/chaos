@@ -10,7 +10,7 @@
             Math.PI * 2/3,  // 120 degrees
             Math.PI * 4/3   // 240 degrees
         ],
-        offset = 0,
+        offset = Math.random() * Math.PI * 2,
         size = 0,
         dist = 0,
         scaleFactor = 0.6;
