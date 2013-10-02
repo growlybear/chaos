@@ -10,6 +10,7 @@
             Math.PI * 2/3,  // 120 degrees
             Math.PI * 4/3   // 240 degrees
         ],
+        offset = 0,
         size = 0,
         dist = 0,
         scaleFactor = 0.6;
@@ -57,7 +58,7 @@
         var i;
         for (i = 0; i < numShapes; i++) {
             chaos.context.save();
-            chaos.context.rotate(angles[i] + 0.3);
+            chaos.context.rotate(angles[i] + offset);
             chaos.context.translate(dist, 0);
             chaos.context.scale(scaleFactor, scaleFactor);
 
