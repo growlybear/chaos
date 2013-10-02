@@ -57,7 +57,7 @@
         var i;
         for (i = 0; i < numShapes; i++) {
             chaos.context.save();
-            chaos.context.rotate(angles[i]);
+            chaos.context.rotate(angles[i] + 0.3);
             chaos.context.translate(dist, 0);
             chaos.context.scale(scaleFactor, scaleFactor);
 
