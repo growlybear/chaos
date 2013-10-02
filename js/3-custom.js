@@ -6,9 +6,12 @@
     var maxDepth = 0,
         numShapes = 3,
         angles = [
-            0,              // 0 degrees
-            Math.PI * 2/3,  // 120 degrees
-            Math.PI * 4/3   // 240 degrees
+            // 0,              // 0 degrees
+            // Math.PI * 2/3,  // 120 degrees
+            // Math.PI * 4/3   // 240 degrees
+            Math.random() * Math.PI * 2,
+            Math.random() * Math.PI * 2,
+            Math.random() * Math.PI * 2
         ],
         offset = Math.random() * Math.PI * 2,
         size = 0,
