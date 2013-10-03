@@ -8,7 +8,8 @@
             -Math.PI / 2 * Math.random(),
             Math.PI / 2 * Math.random()
         ],
-        baseSize = 0;
+        baseSize = 0,
+        scaleFactor = 0.6;
 
     function init() {
 
@@ -53,20 +54,20 @@
         chaos.context.rotate(angle);
         chaos.context.beginPath();
         chaos.context.moveTo(0, 0);
-        chaos.context.lineTo(0, -size / 2);
+        chaos.context.lineTo(0, -size * (1 - scaleFactor));
         chaos.context.stroke();
-        chaos.context.translate(0, -size / 2);
+        chaos.context.translate(0, -size * (1 - scaleFactor));
 
         if (depth === 0) {
             // we're done - draw branches
-            drawBranch(size / 2, angles[0]);
-            drawBranch(size / 2, angles[1]);
+            drawBranch(size * scaleFactor, angles[0]);
+            drawBranch(size * scaleFactor, angles[1]);
         }
         else {
             // more iteration
             // draw mini-trees instead of branches
-            drawTree(depth - 1, size / 2, angles[0]);
-            drawTree(depth - 1, size / 2, angles[1]);
+            drawTree(depth - 1, size * (1 - scaleFactor), angles[0]);
+            drawTree(depth - 1, size * (1 - scaleFactor), angles[1]);
         }
 
         chaos.context.restore();
