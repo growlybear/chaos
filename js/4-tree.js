@@ -5,8 +5,8 @@
 
     var maxDepth = 0,
         angles = [
-            -Math.PI / 4,
-            Math.PI / 4
+            -Math.PI / 2 * Math.random(),
+            Math.PI / 2 * Math.random()
         ],
         baseSize = 0;
 
