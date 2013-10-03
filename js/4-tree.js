@@ -9,7 +9,7 @@
             Math.PI / 2 * Math.random()
         ],
         baseSize = 0,
-        scaleFactor = 0.6;
+        scaleFactor = 0.2 + Math.random() * 0.6;
 
     function init() {
 
