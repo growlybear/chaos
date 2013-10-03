@@ -18,6 +18,21 @@
         dist = 0,
         scaleFactor = 0.6;
 
+    function colorise() {
+        var i = 6,
+            ret = '#',
+            hex = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'],
+            rand = function () {
+                return Math.floor(Math.random() * 16);
+            };
+
+        while (i--) {
+            ret = ret + hex[rand()];
+        }
+
+        return ret;
+    }
+
     function init() {
 
         chaos.init();
@@ -49,6 +64,8 @@
     }
 
     function draw() {
+        var color = colorise();
+
         chaos.clear();
         chaos.context.save();
         chaos.context.translate(
@@ -56,20 +73,21 @@
             chaos.height * 0.5
         );
 
-        drawShape();
-        iterate(maxDepth);
+        drawShape(color);
+        iterate(maxDepth, color);
         chaos.context.restore();
     }
 
-    function iterate(depth) {
-        var i;
-        for (i = 0; i < numShapes; i++) {
+    function iterate(depth, color) {
+        var i = 0;
+
+        for (i; i < numShapes; i++) {
             chaos.context.save();
             chaos.context.rotate(angles[i] + offset);
             chaos.context.translate(dist[i], 0);
             chaos.context.scale(scaleFactor, scaleFactor);
 
-            drawShape();
+            drawShape(color);
 
             if (depth > 0) {
                 iterate(depth - 1);
@@ -79,11 +97,14 @@
         }
     }
 
-    function drawShape() {
-        chaos.context.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    function drawShape(color) {
+        chaos.context.fillStyle = color;
         chaos.context.beginPath();
         // chaos.context.arc(0, 0, size, 0, Math.PI * 2, false);
         chaos.context.rect(0, 0, 20, 400);
+        // chaos.context.font = 'bold italic 80pt Calibri';
+        // chaos.context.textAlign = 'center';
+        // chaos.context.fillText('Samuel Allan!', 0, 0);
         chaos.context.fill();
     }
 
